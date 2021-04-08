@@ -8,36 +8,36 @@ using namespace std;
 
 int main() {
     int one, two, three, four;
-    int evenCount, oddCount;
+    int evenCount = 0, oddCount = 0;
 
     cout << "Please enter 4 positive integers, separated by a space: ";
     cin >> one >> two >> three >> four;
 
     // Check whether each input is even or odd and increment respective counter
-    if (one % 2 == 0)
-        evenCount++;
-    else
+    if (one % 2 != 0)
         oddCount++;
-    if (two % 2 == 0)
-        evenCount++;
     else
-        oddCount++;
-    if (three % 2 == 0)
         evenCount++;
-    else
+    if (two % 2 != 0)
         oddCount++;
-    if (four % 2 == 0)
+    else
         evenCount++;
-    else
+    if (three % 2 != 0)
         oddCount++;
+    else
+        evenCount++;
+    if (four % 2 != 0)
+        oddCount++;
+    else
+        evenCount++;
 
     // Compares even and odd counters
     if (evenCount > oddCount)
         cout << "more evens\n";
-    else if (oddCount == evenCount)
-        cout << "same number of evens and odds\n";
-    else 
+    else if (evenCount < oddCount) 
         cout << "more odds\n";
-
+    else if (oddCount == evenCount)
+        cout << "same number of evens and odds" << endl;
+    
     return 0;
 }
